@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Changeable Stuff -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>agents gams hub - config</title>
+    <!-- Meta for Google, etc -->
+    <meta name="keywords" content="agentsgams, agents gams" />
+    <meta property="og:title" content="Welcome, welcome to Agents Gams. It's safe here." />
+    <meta property="og:description" content="Welcome, welcome to Agents Gams. It's safe here." />
+    <meta name="description" content="Welcome, welcome to Agents Gams. It's safe here." />
+    <!-- Half life reference????? :o -->
+    <meta property="og:site_name" content="agentsgams.github.io" />
+    <meta name="author" content="agentn86" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Styling -->
+    <link href="style.css" rel="stylesheet">
+<body style="display: flex; flex-direction: column; align-items: center; height: 100%;"">
+    <h1 style="text-align: center;">Configuration</h1>
+
+    <div style="width: 100%; max-width: 600px; margin-bottom: 1em;">
+        <h2>about:blank Creator</h2>
+        <p>Enter a URL you want to be opened in a about:blank page below and hit enter:</p>
+        <input id="abtblankurl" placeholder="Enter a website URL..." style="width: 100%;" type="url" pattern="https://.*" autocomplete="on" value="https://">
+        <br><br>
+        <i style="font-size: 10px; line-height: 0;">Note this will not work with some websites that have settings to turn this feature off, but you can copy the link of this website and put it in for extra privacy.</i>
+        <script>
+            function submit() {
+                const input = document.getElementById('abtblankurl').value;
+                var win = window.open();
+                win.document.body.style.margin = '0';
+                win.document.body.style.height = '100vh';
+                win.document.title = "New Tab";
+                var iframe = win.document.createElement('iframe');
+                iframe.style.border = 'none';
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.margin = '0';
+                iframe.referrerpolicy = "no-referrer";
+                iframe.src = input;
+                win.document.body.appendChild(iframe);
+            }
+
+            const aboutbln = document.getElementById('abtblankurl');
+            aboutbln.addEventListener("keyup", (event) => {
+                if (event.key === "Enter") {
+                    submit();
+                };
+            });
+        </script>
+    </div>
+
+    <div style="width: 100%; max-width: 600px;">
+        <h2>Cloaker</h2>
+        <p>Enter a new tab title or a image URL below. What you set will be used on the whole site.</p>
+        <input id="cloakerurl" placeholder="Enter a title or image URL..." style="width: 100%;" type="url" autocomplete="on">
+        <br>
+        <p id="output"></p>
+        <div style="display: flex; justify-content: space-between; margin-top: 1em; margin-bottom: 0.5em;">
+            <button id="cloakerTitle" onclick="changeTabTitle()">Set as Title</button>
+            <button id="cloakerImage" onclick="changeTabFavicon()">Set as Image</button>
+            <button id="cloakerReset" onclick="resetTabSettings()">Reset</button>
+        </div>
+        <i><b>Templates: </b><a onclick="cloakTemplate('classlink')" style="cursor: pointer;">Classlink</a>, <a onclick="cloakTemplate('classroom')" style="cursor: pointer;">Google Classroom</a>, and <a>Google Search</a></i>
+    </div>
+
+    <p style="text-align: center; margin-top: 2em;">
+        <a href="."><button id="homepage">Back to Homepage</button></a>
+    </p>
+    
+    <script src="tools.js"></script>
+    <script src="inject.js"></script>
+</body>
+</html>

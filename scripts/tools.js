@@ -71,5 +71,14 @@ function cloakTemplate(name) {
             tcInput.value = "Home";
             changeTabTitle();
             break;
+        case "gglsearch":
+            // ico
+            var tcInput = document.getElementById("cloakerurl");
+            tcInput.value = "https://agentsgams.github.io/beta/samplecloaks/googlesearch.ico";
+            changeTabFavicon();
+            // title
+            tcInput.value = "Google";
+            changeTabTitle();
+            break;
     }
 };

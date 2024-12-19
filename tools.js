@@ -56,7 +56,7 @@ function cloakTemplate(name) {
         case "classlink":
             // ico
             var tcInput = document.getElementById("cloakerurl");
-            tcInput.value = "https://cdn.classlink.com/production/launchpad/resources/images/favicon/favicon-32x32.png";
+            tcInput.value = "https://agentsgams.github.io/beta/samplecloaks/classlink.png";
             changeTabFavicon();
             // title
             tcInput.value = "Login";
@@ -65,7 +65,7 @@ function cloakTemplate(name) {
         case "classroom":
             // ico
             var tcInput = document.getElementById("cloakerurl");
-            tcInput.value = "https://ssl.gstatic.com/classroom/favicon.png";
+            tcInput.value = "https://agentsgams.github.io/beta/samplecloaks/classroom.png";
             changeTabFavicon();
             // title
             tcInput.value = "Home";

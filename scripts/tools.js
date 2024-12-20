@@ -109,7 +109,7 @@ function cloakTemplate(name) {
             tcInput.value = "https://agentsgams.github.io/beta/samplecloaks/lightspeed.png";
             changeTabFavicon();
             // title
-            tcInput.value = "Restricted";
+            tcInput.value = "Blocked";
             changeTabTitle();
             output(`Sucessfully used "${name}" template!`, "green");
             break;

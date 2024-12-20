@@ -19,7 +19,7 @@
     <link href="fontawesome/css/font-awesome.min.css" rel="stylesheet">
 <body>
     <div class="topnav"><a href="." class="agentsgamsicon">agents gams<span class="blink">_</span></a><div class="dropdown"><button class="dropbtn">Extras <i class="fa fa-caret-down" aria-hidden="true"></i></button><div class="dropdown-content"><a href="https://forms.gle/wZHp65EoP1synuyXA" target="_blank">Request a Project <i class="fa fa-external-link" aria-hidden="true"></i></a></div></div><a href="tools.html" class="active right">Config</a><a href="leaderboard.html" class="right">Leaderboard</a><a href="projects.html" class="right">Projects</a></div>
-    <div style="display: flex; flex-direction: column; align-items: center; height: 100%;"">
+    <div style="display: flex; flex-direction: column; align-items: center; height: 100%;">
         <h1 style=" text-align: center;">Configuration</h1>
 
         <div style="width: 100%; max-width: 600px; margin-bottom: 1em;">
@@ -44,10 +44,20 @@
                 <button id="cloakerImage" onclick="changeTabFavicon()">Set as Image</button>
                 <button id="cloakerReset" onclick="resetTabSettings()">Reset</button>
             </div>
-            <i><b>Templates: </b><a onclick="cloakTemplate('classlink')" style="cursor: pointer;">Classlink</a>, <a
-                    onclick="cloakTemplate('classroom')" style="cursor: pointer;">Google Classroom</a>, and <a
-                    onclick="cloakTemplate('gglsearch')" style="cursor: pointer;">Google
-                    Search</a></i>
+            <label for="templates"><i><b>Templates: </b></i></label>
+            <select id="templates">
+                <option value="launchpad">Classlink Launchpad</option>
+                <optgroup label="Google Services">
+                    <option value="gglclassroom">Google Classroom</option>
+                    <option value="gglsearch">Google Search</option>
+                    <option value="ggldocs">Google Docs</option>
+                </optgroup>
+                <optgroup label="Blocked Screens">
+                    <option value="lightspeed">Lightspeed Filter Agent</option>
+                    <option value="goguardian">GoGuardian</option>
+                </optgroup>
+            </select>
+            <button onclick="cloakTemplate(document.getElementById('templates').value);" style="cursor: pointer;">OK</button>
         </div>
 
         <p style="text-align: center; margin-top: 2em;">

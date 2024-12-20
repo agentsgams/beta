@@ -53,7 +53,7 @@ function resetTabSettings() {
 
 function cloakTemplate(name) {
     switch (name) {
-        case "classlink":
+        case "launchpad":
             // ico
             var tcInput = document.getElementById("cloakerurl");
             tcInput.value = "https://agentsgams.github.io/beta/samplecloaks/classlink.png";
@@ -61,8 +61,9 @@ function cloakTemplate(name) {
             // title
             tcInput.value = "Login";
             changeTabTitle();
+            output(`Sucessfully used "${name}" template!`, "green");
             break;
-        case "classroom":
+        case "gglclassroom":
             // ico
             var tcInput = document.getElementById("cloakerurl");
             tcInput.value = "https://agentsgams.github.io/beta/samplecloaks/classroom.png";
@@ -70,6 +71,7 @@ function cloakTemplate(name) {
             // title
             tcInput.value = "Home";
             changeTabTitle();
+            output(`Sucessfully used "${name}" template!`, "green");
             break;
         case "gglsearch":
             // ico
@@ -79,6 +81,40 @@ function cloakTemplate(name) {
             // title
             tcInput.value = "Google";
             changeTabTitle();
+            output(`Sucessfully used "${name}" template!`, "green");
+            break;
+        case "ggldocs":
+            // ico
+            var tcInput = document.getElementById("cloakerurl");
+            tcInput.value = "https://agentsgams.github.io/beta/samplecloaks/googledocs.ico";
+            changeTabFavicon();
+            // title
+            tcInput.value = "Google Docs";
+            changeTabTitle();
+            output(`Sucessfully used "${name}" template!`, "green");
+            break;
+        case "goguardian":
+            // ico
+            var tcInput = document.getElementById("cloakerurl");
+            tcInput.value = "https://agentsgams.github.io/beta/samplecloaks/goguardian.png";
+            changeTabFavicon();
+            // title
+            tcInput.value = "Restricted";
+            changeTabTitle();
+            output(`Sucessfully used "${name}" template!`, "green");
+            break;
+        case "lightspeed":
+            // ico
+            var tcInput = document.getElementById("cloakerurl");
+            tcInput.value = "https://agentsgams.github.io/beta/samplecloaks/lightspeed.png";
+            changeTabFavicon();
+            // title
+            tcInput.value = "Restricted";
+            changeTabTitle();
+            output(`Sucessfully used "${name}" template!`, "green");
+            break;
+        default:
+            output("This template doesn't seem to exist...", "red");
             break;
     }
 };
